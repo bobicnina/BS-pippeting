@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         val numberOfAllExperiments = ponovitve.sum();
+        //if it is impossible to place all wells on the maximum nr. of plates, function should return an error
+        when(numberOfAllExperiments){
+            in 0..velikostPlosce -> Unit;
+            else -> println("Število plošč je premajhno za dano število eksperimentov.")
+        }
 
         var eksperimenti = arrayOfNulls<Array<Array<String>>>(imenaVzorcev.size);
 
